@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-02-18T15:15:38.266439" rpa="false" schemaversion="5">
+<suite id="s1" name="Sck Online Shoping Creditcard Success" source="D:\workshop\e2e-ui\.venv\lab-06\sck_online_shoping_creditcard_success.robot">
+<test id="s1-t1" name="ทดสอบ สั่งซื้อสินค้าจัดส่งด้วยเคอรี่่ ชำระเงินด้วยบัตร visa สำเร็จ และตรวจสอบการได้แต้มสะสม" line="11">
+<kw name="สั่งซื้อสินค้า" owner="resource">
+<kw name="ค้นหาสินค้าด้วย คำค้นหา" owner="resource">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-02-18T15:15:38.421105" level="INFO">Opening browser 'gc' to base url 'http://192.168.3.115:3000/product/list'.</msg>
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-18T15:15:38.421105" elapsed="1.718365"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-18T15:15:40.139470" level="INFO">Typing text 'Bicycle' into text field 'id:search-product-input'.</msg>
+<arg>id:search-product-input</arg>
+<arg>${SEARCH}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T15:15:40.139470" elapsed="0.148033"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-18T15:15:40.288504" level="INFO">Clicking element 'id:search-product-btn'.</msg>
+<arg>id:search-product-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T15:15:40.288504" elapsed="0.087020"/>
+</kw>
+<arg>${SEARCH}</arg>
+<status status="PASS" start="2024-02-18T15:15:38.421105" elapsed="1.954419"/>
+</kw>
+<kw name="ตรวจสอบผลการค้นหา" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:${CARD-NAME-LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-02-18T15:15:40.376524" elapsed="0.230888"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-02-18T15:15:40.623416" level="INFO">Element 'id=product-card-name-1' contains text 'Balance Training Bicycle'.</msg>
+<arg>id=${CARD-NAME-LOCATOR}</arg>
+<arg>${RESULT}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-02-18T15:15:40.607412" elapsed="0.016004"/>
+</kw>
+<arg>${CARD-NAME-LOCATOR}</arg>
+<arg>${RESULT}</arg>
+<status status="PASS" start="2024-02-18T15:15:40.375524" elapsed="0.247892"/>
+</kw>
+<kw name="เลือกดูสินค้า" owner="resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-18T15:15:40.624416" level="INFO">Clicking element 'id=product-card-name-1'.</msg>
+<arg>id=${PRODUCTID}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T15:15:40.624416" elapsed="0.129353"/>
+</kw>
+<arg>${PRODUCTID}</arg>
+<status status="PASS" start="2024-02-18T15:15:40.623416" elapsed="0.130353"/>
+</kw>
+<kw name="ตรวจสอบจำนวนแต้มต่อชิ้นที่จะได้รับ" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:${detail-point-LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-02-18T15:15:40.753769" elapsed="0.223727"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-02-18T15:15:40.978496" level="INFO">Verifying element 'id=product-detail-point' contains exact text '43 Points'.</msg>
+<arg>id=${detail-point-LOCATOR}</arg>
+<arg>${POINT-RESULT}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-02-18T15:15:40.978496" elapsed="0.011003"/>
+</kw>
+<arg>${detail-point-LOCATOR}</arg>
+<arg>${POINT-RESULT}</arg>
+<status status="PASS" start="2024-02-18T15:15:40.753769" elapsed="0.235730"/>
+</kw>
+<kw name="เพิ่ม Balance Training bicycle ลงตะกร้า" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-18T15:15:40.990499" level="INFO">Clicking button 'id=product-detail-add-to-cart-btn'.</msg>
+<arg>id=${PRODUCT-DETAIL-LOCATOR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T15:15:40.990499" elapsed="0.036008"/>
+</kw>
+<arg>${PRODUCT-DETAIL-LOCATOR}</arg>
+<status status="PASS" start="2024-02-18T15:15:40.989499" elapsed="0.037008"/>
+</kw>
+<arg>Bicycle</arg>
+<arg>product-card-name-1</arg>
+<arg>Balance Training Bicycle</arg>
+<arg>product-card-name-1</arg>
+<arg>product-detail-point</arg>
+<arg>43 Points</arg>
+<arg>product-detail-add-to-cart-btn</arg>
+<status status="PASS" start="2024-02-18T15:15:38.420105" elapsed="2.606402"/>
+</kw>
+<status status="PASS" start="2024-02-18T15:15:38.418094" elapsed="2.609413"/>
+</test>
+<status status="PASS" start="2024-02-18T15:15:38.267439" elapsed="2.760068"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Sck Online Shoping Creditcard Success">Sck Online Shoping Creditcard Success</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-02-18T15:15:38.261973" level="WARN">Error in file 'D:\workshop\e2e-ui\.venv\lab-06\sck_online_shoping_creditcard_success.robot' on line 1: Singular section headers like '*** Setting ***' are deprecated. Use plural format like '*** Settings ***' instead.</msg>
+<msg time="2024-02-18T15:15:38.262974" level="WARN">Error in file 'D:\workshop\e2e-ui\.venv\lab-06\sck_online_shoping_creditcard_success.robot' on line 6: Singular section headers like '*** Variable ***' are deprecated. Use plural format like '*** Variables ***' instead.</msg>
+</errors>
+</robot>

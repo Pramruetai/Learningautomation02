@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-02-18T08:45:22.868715" rpa="false" schemaversion="5">
+<suite id="s1" name="Google" source="D:\workshop\e2e-ui\.venv\lab-02\google.robot">
+<test id="s1-t1" name="ทดสอบค้นหา ทุเรียน และตรวจสอบผลการค้นหา 12 เกร็ดความรู้ เรื่อง ทุเรียน ที่คนชอบกินทุเรียนควรรู้" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-02-18T08:45:23.425327" level="INFO">Opening browser 'headlesschrome' to base url 'https://www.google.co.th/'.</msg>
+<arg>url=https://www.google.co.th/</arg>
+<arg>browser=headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-18T08:45:23.425327" elapsed="4.779063"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-18T08:45:28.207389" level="INFO">Typing text 'ทุเรียน' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>text=ทุเรียน</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T08:45:28.205390" elapsed="0.131527"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-02-18T08:45:28.338917" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg time="2024-02-18T08:45:28.338917" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg time="2024-02-18T08:45:28.338917" level="INFO">Releasing special key RETURN.</msg>
+<arg>None</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-02-18T08:45:28.337915" elapsed="4.017245"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>12 เกร็ดความรู้ เรื่อง ทุเรียน ที่คนชอบกินทุเรียนควรรู้</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T08:45:32.356161" elapsed="0.036664"/>
+</kw>
+<status status="PASS" start="2024-02-18T08:45:23.418326" elapsed="8.975513"/>
+</test>
+<status status="PASS" start="2024-02-18T08:45:22.872729" elapsed="9.522932"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Google">Google</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-02-18T08:45:22.850677" level="WARN">Error in file 'D:\workshop\e2e-ui\.venv\lab-02\google.robot' on line 1: Singular section headers like '*** Setting ***' are deprecated. Use plural format like '*** Settings ***' instead.</msg>
+</errors>
+</robot>

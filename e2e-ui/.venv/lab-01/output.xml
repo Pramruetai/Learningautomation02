@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-02-17T13:02:48.978637" rpa="false" schemaversion="5">
+<suite id="s1" name="Builtin" source="D:\workshop\e2e-ui\lab-01\builtin.robot">
+<test id="s1-t1" name="ทดสอบคำสั่ง Log to console" line="2">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hello, console!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-17T13:02:49.008644" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-02-17T13:02:49.007643" elapsed="0.001001"/>
+</test>
+<test id="s1-t2" name="ทดสอบบวกเลข" line="5">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-02-17T13:02:49.009674" level="INFO">${result} = 2</msg>
+<var>${result}</var>
+<arg>1 + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-02-17T13:02:49.009674" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${2}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-17T13:02:49.010685" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-02-17T13:02:49.010685" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>2</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-02-17T13:02:49.010685" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-02-17T13:02:49.009674" elapsed="0.001011"/>
+</test>
+<status status="PASS" start="2024-02-17T13:02:48.979637" elapsed="0.032048"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Builtin">Builtin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
